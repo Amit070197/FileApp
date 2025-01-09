@@ -5,20 +5,9 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Install Ruby version (version 3.0+)
+  https://www.ruby-lang.org/en/documentation/installation/
 
-* System dependencies
+* Create database
+  rails db:setup  // it will creater and migrate db
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
