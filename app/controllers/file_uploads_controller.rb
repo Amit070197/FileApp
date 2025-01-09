@@ -7,6 +7,8 @@ class FileUploadsController < ApplicationController
   end
 
   def show
+    @file_upload = FileUpload.find(params[:id])
+    @tiny_url = ShortURL.shorten(url_for(@file_upload.file))
   end
 
   def new
