@@ -21,7 +21,16 @@
     <%= form.text_area :description %>
   </div>
 
+  <div class="field" style="display: none;">
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :file %>
+    <%= form.file_field :file, id: 'file_input' %>
+  </div>
+
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Save"%>
   </div>
 <% end %>

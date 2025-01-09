@@ -1,8 +1,9 @@
 class FileUploadsController < ApplicationController
   before_action :set_file_upload, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   def index
-    @file_uploads = FileUpload.all
+    @file_uploads = FileUpload.where(user_id: current_user)
   end
 
   def show
@@ -56,6 +57,6 @@ class FileUploadsController < ApplicationController
     end
 
     def file_upload_params
-      params.require(:file_upload).permit(:title, :description)
+      params.require(:file_upload).permit(:title, :description, :user_id, :file)
     end
 end
